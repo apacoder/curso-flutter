@@ -1,4 +1,4 @@
-import 'package:examples/curso/2_widgets/widgets.dart';
+import 'package:examples/curso/2_widgets/screens/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
