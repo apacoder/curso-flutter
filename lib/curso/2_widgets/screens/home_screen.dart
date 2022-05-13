@@ -1,4 +1,5 @@
 import 'package:examples/curso/2_widgets/screens/widgets.dart';
+import 'package:examples/curso/2_widgets/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +16,10 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, i) => ListTile(
           title: Text(options[i].name),
-          trailing: Icon(options[i].icon),
+          trailing: Icon(
+            options[i].icon,
+            color: AppTheme.primary,
+          ),
           onTap: () {
             Navigator.pushNamed(context, options[i].route);
           },
