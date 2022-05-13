@@ -1,6 +1,5 @@
+import 'package:examples/curso/2_widgets/widgets.dart';
 import 'package:flutter/material.dart';
-
-import 'curso/2_widgets/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       // home: const CardScreen(),
-      initialRoute: 'home',
-      routes: {
-        'home': (context) => const HomeScreen(),
-        'listview1': (context) => const ListView1Screen(),
-        'listview2': (context) => const ListView2Screen(),
-        'alert': (context) => const AlertScreen(),
-        'card': (context) => const CardScreen(),
-      },
+      initialRoute: AppRoute.initialRoute,
+      routes: AppRoute.getAppRoutes(),
+      onGenerateRoute: AppRoute.onGenerateRoute,
     );
   }
 }

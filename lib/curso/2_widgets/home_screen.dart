@@ -1,3 +1,4 @@
+import 'package:examples/curso/2_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,6 +6,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final options = AppRoute.menuOption;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Componentes en Flutter'),
@@ -12,18 +14,18 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: ListView.builder(
-        itemBuilder: (context, index) => ListTile(
-          title: Text('Item ${index + 1}'),
-          trailing: const Icon(Icons.arrow_right),
+        itemBuilder: (context, i) => ListTile(
+          title: Text(options[i].name),
+          trailing: Icon(options[i].icon),
           onTap: () {
             // final route = MaterialPageRoute(
             //   builder: (context) => const ListView1Screen(),
             // );
             // Navigator.push(context, route);
-            Navigator.pushNamed(context, 'alert');
+            Navigator.pushNamed(context, options[i].route);
           },
         ),
-        itemCount: 20,
+        itemCount: options.length,
       ),
     );
   }
