@@ -17,14 +17,15 @@ class CardScreen extends StatelessWidget {
             horizontal: 10,
             vertical: 10,
           ),
-          children: [
-            CustomCard2(),
-            CustomCard2(),
-            const CustomCard1(
-              title: 'Dolore fugiat 1',
-              subtitle:
-                  'Proident labore ex nisi dolor non et sint pariatur ipsum irure aliquip. Sunt aute ullamco fugiat dolore excepteur et qui officia. Reprehenderit adipisicing adipisicing mollit Lorem consequat ullamco cupidatat ipsum enim Lorem dolore exercitation eu. Veniam excepteur sunt aute aliqua aute proident officia irure excepteur..',
-            ),
+          children: const [
+            CustomCard2(imgUrl: 'https://picsum.photos/id/25/800'),
+            CustomCard2(imgUrl: 'https://picsum.photos/id/289/800'),
+            CustomCard2(imgUrl: 'https://picsum.photos/id/290/800'),
+            // CustomCard1(
+            //   title: 'Cámara leica',
+            //   subtitle:
+            //       'Las cámaras Leica tan chidas, sin nada más que agregar.',
+            // ),
           ],
         ),
       ),

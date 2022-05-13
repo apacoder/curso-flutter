@@ -2,23 +2,23 @@ import 'package:examples/curso/2_componentes/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard2 extends StatelessWidget {
-  CustomCard2({Key? key}) : super(key: key);
+  final String imgUrl;
 
-  String img = 'https://picsum.photos/800';
+  const CustomCard2({required this.imgUrl, Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(5.0),
       ),
       clipBehavior: Clip.antiAlias,
       elevation: 5,
-      shadowColor: AppTheme.primary.withOpacity(1),
       child: Column(
         children: [
           //
           FadeInImage(
-            image: NetworkImage(img),
+            image: NetworkImage(imgUrl),
             placeholder: const AssetImage('assets/ios.gif'),
             width: double.infinity,
             height: 200,
