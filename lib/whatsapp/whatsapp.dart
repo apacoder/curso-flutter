@@ -8,7 +8,6 @@ class WhatsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.green,
         title: Row(
           children: const [
@@ -41,7 +40,6 @@ class MessageView extends StatelessWidget {
     return SizedBox(
       height: 80,
       child: Card(
-        elevation: 2,
         child: ListTile(
           leading: Container(
               decoration: const BoxDecoration(

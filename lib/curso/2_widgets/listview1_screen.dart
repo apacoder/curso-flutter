@@ -16,7 +16,6 @@ class ListView1Screen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ListView Tipo 1'),
         centerTitle: true,
-        elevation: 0,
       ),
       body: ListView(
         children: [
