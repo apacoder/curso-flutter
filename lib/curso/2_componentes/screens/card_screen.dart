@@ -19,7 +19,10 @@ class CardScreen extends StatelessWidget {
           ),
           children: const [
             CustomCard2(imgUrl: 'https://picsum.photos/id/25/800'),
-            CustomCard2(imgUrl: 'https://picsum.photos/id/289/800'),
+            CustomCard2(
+              imgUrl: 'https://picsum.photos/id/289/800',
+              name: 'Muchos árboles',
+            ),
             CustomCard2(imgUrl: 'https://picsum.photos/id/290/800'),
             // CustomCard1(
             //   title: 'Cámara leica',

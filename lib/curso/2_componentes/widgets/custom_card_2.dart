@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 
 class CustomCard2 extends StatelessWidget {
   final String imgUrl;
+  final String? name;
 
-  const CustomCard2({required this.imgUrl, Key? key}) : super(key: key);
+  const CustomCard2({
+    required this.imgUrl,
+    this.name,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +31,13 @@ class CustomCard2 extends StatelessWidget {
             placeholderFit: BoxFit.fitHeight,
           ),
           //
-          Container(
-            color: AppTheme.primary,
-            alignment: AlignmentDirectional.centerEnd,
-            padding: const EdgeInsets.all(10),
-            child: const Text('Una imagen random'),
-          )
+          if (name != null)
+            Container(
+              color: AppTheme.primary,
+              alignment: AlignmentDirectional.centerEnd,
+              padding: const EdgeInsets.all(10),
+              child: Text(name!),
+            )
         ],
       ),
     );
