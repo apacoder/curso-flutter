@@ -27,20 +27,24 @@ class CustomCard extends StatelessWidget {
                 title,
                 style: TextStyle(color: AppTheme.primary),
               ),
-              trailing: const Icon(
-                Icons.arrow_right,
-                size: 30,
-              ),
               subtitle: Text(subtitle),
-              onTap: () {},
+              onTap: () {
+                print(title);
+              },
             ),
-            const Divider(),
+            Divider(thickness: 0.5, color: AppTheme.primary),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(onPressed: () {}, child: const Text('aceptar')),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('aceptar'),
+                ),
                 const SizedBox(width: 10),
-                ElevatedButton(onPressed: () {}, child: const Text('Cancelar')),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Cancelar'),
+                ),
               ],
             )
           ],

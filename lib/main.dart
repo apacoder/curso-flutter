@@ -1,4 +1,5 @@
 import 'package:examples/curso/2_componentes/screens/screens.dart';
+import 'package:examples/curso/2_componentes/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoute.initialRoute,
       routes: AppRoute.getAppRoutes(),
       onGenerateRoute: AppRoute.onGenerateRoute,
-      theme: ThemeData.light(),
+      theme: AppTheme.darkTheme,
     );
   }
 }

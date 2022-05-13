@@ -9,5 +9,11 @@ class AppTheme {
       backgroundColor: primary,
       elevation: 0,
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.grey[900],
+        primary: primary,
+      ),
+    ),
   );
 }
