@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static Color primary = Colors.orange;
+  static Color primary = Colors.cyan;
 
-  static final ThemeData darkTheme = ThemeData.light().copyWith(
+  static final ThemeData darkTheme = ThemeData.dark().copyWith(
     primaryColor: primary,
     appBarTheme: AppBarTheme(
       backgroundColor: primary,

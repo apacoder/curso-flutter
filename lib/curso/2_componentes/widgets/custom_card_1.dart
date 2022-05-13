@@ -1,21 +1,21 @@
 import 'package:examples/curso/2_componentes/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class CustomCard extends StatefulWidget {
+class CustomCard1 extends StatefulWidget {
   final String title;
   final String subtitle;
 
-  const CustomCard({
+  const CustomCard1({
     Key? key,
     required this.title,
     required this.subtitle,
   }) : super(key: key);
 
   @override
-  State<CustomCard> createState() => _CustomCardState();
+  State<CustomCard1> createState() => _CustomCard1State();
 }
 
-class _CustomCardState extends State<CustomCard> {
+class _CustomCard1State extends State<CustomCard1> {
   String? status;
 
   bool isResolved = false;
