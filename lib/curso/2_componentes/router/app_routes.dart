@@ -1,3 +1,4 @@
+import 'package:examples/curso/2_componentes/screens/avatar_screen.dart';
 import 'package:examples/curso/2_componentes/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,12 @@ class AppRoute {
       icon: Icons.credit_card,
       name: 'Tarjetas',
       screen: const CardScreen(),
+    ),
+    MenuOption(
+      route: 'avatar',
+      icon: Icons.supervised_user_circle_outlined,
+      name: 'Avatar screen',
+      screen: const AvatarScreen(),
     ),
   ];
 

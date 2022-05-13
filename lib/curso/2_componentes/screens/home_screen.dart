@@ -15,11 +15,11 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (context, i) => ListTile(
-          title: Text(options[i].name),
-          trailing: Icon(
+          leading: Icon(
             options[i].icon,
             color: AppTheme.primary,
           ),
+          title: Text(options[i].name),
           onTap: () {
             Navigator.pushNamed(context, options[i].route);
           },
