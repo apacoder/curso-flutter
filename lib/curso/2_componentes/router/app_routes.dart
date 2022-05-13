@@ -1,4 +1,4 @@
-import 'package:examples/curso/2_widgets/screens/widgets.dart';
+import 'package:examples/curso/2_componentes/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class AppRoute {

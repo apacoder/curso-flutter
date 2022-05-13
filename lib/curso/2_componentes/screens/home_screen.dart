@@ -1,5 +1,5 @@
-import 'package:examples/curso/2_widgets/screens/widgets.dart';
-import 'package:examples/curso/2_widgets/theme/app_theme.dart';
+import 'package:examples/curso/2_componentes/router/app_routes.dart';
+import 'package:examples/curso/2_componentes/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
