@@ -12,11 +12,11 @@ class InputsScreen extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: const [
-              CustomInputField(),
+              CustomInputField(labelText: 'Nombre', prefixIxon: Icons.person),
               Divider(),
               CustomInputField(labelText: 'Email', prefixIxon: Icons.email),
               Divider(),
-              CustomInputField(),
+              CustomInputField(labelText: 'Dirección', prefixIxon: Icons.home),
             ],
           ),
         ),
