@@ -4,18 +4,23 @@ class CustomInputField extends StatelessWidget {
   final String? labelText;
   final String? hintText;
   final IconData? prefixIxon;
+  final TextInputType? keyboardType;
+  final bool obscureText;
 
   const CustomInputField({
     Key? key,
     this.labelText,
     this.hintText,
     this.prefixIxon,
+    this.keyboardType,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // autofocus: true,
+      keyboardType: keyboardType,
+      obscureText: obscureText,
       textCapitalization: TextCapitalization.words,
       onChanged: (value) {
         print(value);
