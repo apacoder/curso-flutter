@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      // home: const CardScreen(),
       initialRoute: AppRoute.initialRoute,
       routes: AppRoute.getAppRoutes(),
       onGenerateRoute: AppRoute.onGenerateRoute,

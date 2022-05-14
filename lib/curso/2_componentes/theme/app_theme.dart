@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static Color? primary = const Color.fromARGB(255, 0, 113, 117);
+  static Color primary = Colors.pink;
 
-  static final ThemeData darkTheme = ThemeData.dark().copyWith(
+  static final ThemeData darkTheme = ThemeData.light().copyWith(
+    colorScheme: ThemeData().colorScheme.copyWith(primary: primary),
     primaryColor: primary,
     appBarTheme: AppBarTheme(
       backgroundColor: primary,
@@ -22,6 +23,15 @@ class AppTheme {
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: primary,
       foregroundColor: Colors.white,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: const OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: primary,
+        ),
+      ),
+      floatingLabelStyle: TextStyle(color: primary),
     ),
   );
 }
