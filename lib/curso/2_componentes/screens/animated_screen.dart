@@ -19,13 +19,15 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
+        child: AnimatedContainer(
           width: _width,
           height: _height,
           decoration: BoxDecoration(
             borderRadius: _borderRadius,
             color: _color,
           ),
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInBack,
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -39,13 +41,13 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
     Random rnd = Random();
     _width = rnd.nextInt(300) + 70;
     _height = rnd.nextInt(300) + 70;
+    _borderRadius = BorderRadius.circular(rnd.nextInt(200) + 1);
     _color = Color.fromRGBO(
       rnd.nextInt(256),
       rnd.nextInt(256),
       rnd.nextInt(256),
       1,
     );
-    _borderRadius = BorderRadius.circular(rnd.nextInt(200) + 1);
     _isPresed = !_isPresed;
     setState(() {});
   }
