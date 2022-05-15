@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:examples/curso/2_componentes/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +10,11 @@ class InputsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<FormState> myFormKey = GlobalKey<FormState>();
 
-    final Map<String, String> formValues = {
-      'first_name': 'Rafael',
-      'last_name': 'Aparicio',
-      'email': 'rafael@google.com',
-      'password': '123456',
+    final Map<String, String?> formValues = {
+      'first_name': null,
+      'last_name': null,
+      'email': null,
+      'password': null,
       'role': 'Admin',
     };
 
@@ -30,28 +32,40 @@ class InputsScreen extends StatelessWidget {
               key: myFormKey,
               child: Column(
                 children: [
-                  const CustomInputField(
+                  CustomInputField(
                     labelText: 'Nombre',
                     hintText: 'Nombre del usuario',
+                    formProperty: 'first_name',
+                    formValues: formValues,
                   ),
-                  const Divider(),
-                  const CustomInputField(
+                  const SizedBox(height: 15),
+                  //
+                  CustomInputField(
                     labelText: 'Apellido',
                     hintText: 'Apellido del usuario',
+                    formProperty: 'last_name',
+                    formValues: formValues,
                   ),
-                  const Divider(),
-                  const CustomInputField(
+                  const SizedBox(height: 15),
+                  //
+                  CustomInputField(
                     labelText: 'Correo',
                     hintText: 'Correo del usuario',
+                    formProperty: 'email',
+                    formValues: formValues,
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  const Divider(),
-                  const CustomInputField(
+                  const SizedBox(height: 15),
+                  //
+                  CustomInputField(
                     labelText: 'Contraseña',
                     hintText: 'Contraseña del usuario',
+                    formProperty: 'password',
+                    formValues: formValues,
                     obscureText: true,
                   ),
-                  const Divider(),
+                  const SizedBox(height: 15),
+                  //
                   ElevatedButton(
                     child: const SizedBox(
                       child: Center(child: Text('Guardar')),
@@ -65,7 +79,8 @@ class InputsScreen extends StatelessWidget {
                         print('Formulario incorrecto');
                         return;
                       }
-                      print(formValues);
+
+                      pretyPrint(formValues);
                     },
                   )
                 ],
@@ -76,4 +91,9 @@ class InputsScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void pretyPrint(var object) {
+  final prettyString = const JsonEncoder.withIndent('  ').convert(object);
+  print(prettyString);
 }
