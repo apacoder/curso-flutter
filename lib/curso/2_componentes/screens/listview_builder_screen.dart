@@ -54,11 +54,20 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   }
 
   void addImages(int n) {
+    final int lastId = imagesIDs.last;
     for (int i = 0; i < n; i++) {
-      imagesIDs.add(imagesIDs.length + 1);
+      imagesIDs.add(lastId + 1);
     }
     print('imagesIDs: ${imagesIDs.length}');
     setState(() {});
+  }
+
+  Future<void> onRefresh() async {
+    final int lastId = imagesIDs.last;
+    print(lastId);
+    imagesIDs.clear();
+    imagesIDs.add(lastId + 1);
+    addImages(2);
   }
 
   @override
@@ -66,18 +75,21 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            controller: scrollController,
-            itemCount: imagesIDs.length,
-            itemBuilder: (BuildContext context, int index) {
-              return FadeInImage(
-                fit: BoxFit.fitHeight,
-                placeholderFit: BoxFit.scaleDown,
-                placeholder: const AssetImage('assets/Loading_icon.gif'),
-                image: Pokemon.imageByID(imagesIDs[index]),
-              );
-            },
+          RefreshIndicator(
+            onRefresh: onRefresh,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              controller: scrollController,
+              itemCount: imagesIDs.length,
+              itemBuilder: (BuildContext context, int index) {
+                return FadeInImage(
+                  fit: BoxFit.fitHeight,
+                  placeholderFit: BoxFit.scaleDown,
+                  placeholder: const AssetImage('assets/Loading_icon.gif'),
+                  image: Pokemon.imageByID(imagesIDs[index]),
+                );
+              },
+            ),
           ),
           if (isLoading) const PokemonLoadingAnimation(),
           if (isLoading) const CircularLoadingAnimation()
