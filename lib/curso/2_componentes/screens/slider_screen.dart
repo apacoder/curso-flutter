@@ -68,7 +68,7 @@ class _SliderScreenState extends State<SliderScreen> {
                 style: TextStyle(fontSize: 20),
               ),
               onChanged: (val) {
-                isCheckBoxActive = val ?? true;
+                isCheckBoxActive = val;
                 setState(() {});
               },
             ),

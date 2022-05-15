@@ -8,4 +8,5 @@ export 'package:examples/curso/2_componentes/screens/home_screen.dart';
 export 'package:examples/curso/2_componentes/screens/inputs_screen.dart';
 export 'package:examples/curso/2_componentes/screens/listview1_screen.dart';
 export 'package:examples/curso/2_componentes/screens/listview2_screen.dart';
+export 'package:examples/curso/2_componentes/screens/listview_builder_screen.dart';
 export 'package:examples/curso/2_componentes/screens/slider_screen.dart';
