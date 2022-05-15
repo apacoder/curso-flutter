@@ -1,4 +1,3 @@
-import 'package:examples/curso/2_componentes/screens/avatar_screen.dart';
 import 'package:examples/curso/2_componentes/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +51,13 @@ class AppRoute {
       route: 'inputs',
       icon: Icons.text_fields,
       name: 'Input screen',
-      screen: InputsScreen(),
+      screen: const InputsScreen(),
+    ),
+    MenuOption(
+      route: 'slider',
+      icon: Icons.settings_ethernet_sharp,
+      name: 'Sliders',
+      screen: const SliderScreen(),
     ),
   ];
 

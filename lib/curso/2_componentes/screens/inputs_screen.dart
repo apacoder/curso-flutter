@@ -67,14 +67,20 @@ class InputsScreen extends StatelessWidget {
                   const SizedBox(height: 15),
                   //
                   DropdownButtonFormField<String>(
-                    items: const [
-                      DropdownMenuItem(
+                    items: [
+                      const DropdownMenuItem(
                         value: 'admin',
                         child: Text('Admin'),
                       ),
                       DropdownMenuItem(
                         value: 'logo',
-                        child: Text('El logo bonito'),
+                        child: Row(
+                          children: const [
+                            FlutterLogo(),
+                            SizedBox(width: 10),
+                            Text('El logo bonito'),
+                          ],
+                        ),
                       ),
                     ],
                     onChanged: (value) {
