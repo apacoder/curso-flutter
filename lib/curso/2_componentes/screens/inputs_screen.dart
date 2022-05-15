@@ -15,7 +15,7 @@ class InputsScreen extends StatelessWidget {
       'last_name': null,
       'email': null,
       'password': null,
-      'role': 'Admin',
+      'role': 'admin',
     };
 
     return SafeArea(
@@ -66,6 +66,25 @@ class InputsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   //
+                  DropdownButtonFormField<String>(
+                    items: const [
+                      DropdownMenuItem(
+                        value: 'admin',
+                        child: Text('Admin'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'logo',
+                        child: Text('El logo bonito'),
+                      ),
+                    ],
+                    onChanged: (value) {
+                      formValues['role'] = value ?? 'admin';
+                      print('hola');
+                    },
+                  ),
+                  //
+                  const SizedBox(height: 15),
+                  //
                   ElevatedButton(
                     child: const SizedBox(
                       child: Center(child: Text('Guardar')),
@@ -73,7 +92,8 @@ class InputsScreen extends StatelessWidget {
                     ),
                     onPressed: () {
                       //Quitar teclado
-                      FocusScope.of(context).requestFocus(FocusNode());
+                      //Solo agregar linea cuando se sabe que se va a salir de la pantalla para quitar el teclado
+                      // FocusScope.of(context).requestFocus(FocusNode());
 
                       if (!myFormKey.currentState!.validate()) {
                         print('Formulario incorrecto');
