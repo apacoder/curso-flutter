@@ -23,11 +23,22 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
 
     print('adding images ids');
 
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     addImages(5);
 
     isLoading = false;
     setState(() {});
+
+    if (scrollController.position.pixels + 300 <=
+        scrollController.position.maxScrollExtent) return;
+
+    //Animar solo si estoy CASI al final
+
+    scrollController.animateTo(
+      scrollController.position.pixels + 200, //set new position offset
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.fastOutSlowIn,
+    );
   }
 
   @override
