@@ -63,7 +63,7 @@ class AppRoute {
       route: 'listviewbuilder',
       icon: Icons.swap_vert_circle_outlined,
       name: 'Infinite Scroll & Pull to refresh',
-      screen: const ListViewBuilderScreen(),
+      screen: ListViewBuilderScreen(),
     ),
   ];
 
