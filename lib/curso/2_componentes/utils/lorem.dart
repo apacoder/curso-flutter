@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
 class Lorem {
   static String as(int n) {
     List<String> words =
@@ -15,5 +17,18 @@ class Lorem {
       text += words[random.nextInt(words.length)] + ' ';
     }
     return text[0].toUpperCase() + text.substring(1, text.length - 1) + '.';
+  }
+}
+
+class Pokemon {
+  static NetworkImage imageByID(int id) {
+    return NetworkImage(
+      // 'https://picsum.photos/1000/600?image=${imagesIDs[index]}',
+      // 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${imagesIDs[index]}.png',
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png',
+      // 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/${imagesIDs[index]}.png',
+      // 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/${imagesIDs[index]}.png',
+      // 'https://static.wikia.nocookie.net/espokemon/images/1/17/Mega-Lucario_XY.gif',
+    );
   }
 }
