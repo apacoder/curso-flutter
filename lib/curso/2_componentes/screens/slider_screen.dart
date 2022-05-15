@@ -34,10 +34,14 @@ class _SliderScreenState extends State<SliderScreen> {
                 setState(() {});
               },
             ),
-            Image(
-              width: actualValue,
-              image: const NetworkImage(
-                'https://i.pinimg.com/originals/21/c2/3f/21c23fd79c981df5afa862abf54c00a4.png',
+            Expanded(
+              child: SingleChildScrollView(
+                child: Image(
+                  width: actualValue,
+                  image: const NetworkImage(
+                    'https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Character_Ganyu_Card.png',
+                  ),
+                ),
               ),
             )
           ],
