@@ -24,9 +24,7 @@ class AvatarScreen extends StatelessWidget {
       body: const Center(
         child: CircleAvatar(
           maxRadius: 150,
-          backgroundImage: NetworkImage(
-            'https://alfabetajuega.com/hero/2022/05/Dragon-Ball-confirma-a-que-personaje-Goku-nunca-podra-ganarle.jpg',
-          ),
+          backgroundImage: AssetImage('assets/goku.jpg'),
         ),
       ),
     );
