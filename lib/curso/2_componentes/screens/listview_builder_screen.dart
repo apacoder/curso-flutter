@@ -23,7 +23,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
 
     print('adding images ids');
 
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
     addImages(5);
 
     isLoading = false;
@@ -56,7 +56,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   void addImages(int n) {
     final int lastId = imagesIDs.last;
     for (int i = 0; i < n; i++) {
-      imagesIDs.add(lastId + 1);
+      imagesIDs.add(lastId + i + 1);
     }
     print('imagesIDs: ${imagesIDs.length}');
     setState(() {});
